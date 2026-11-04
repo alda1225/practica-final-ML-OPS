@@ -1,0 +1,29 @@
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/credito-api   3/3     3            3           6h27m
+deployment.apps/mlflow        1/1     1            1           6h33m
+
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/credito-api-9674b6c78-5cgx2   1/1     Running   0          6h20m
+pod/credito-api-9674b6c78-g8972   1/1     Running   0          6h21m
+pod/credito-api-9674b6c78-hvcjl   1/1     Running   0          6h21m
+pod/mlflow-6976698df6-65wnx       1/1     Running   0          6h20m
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/credito-api   5/5     5            5           6h27m
+deployment.apps/mlflow        1/1     1            1           6h33m
+
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/credito-api-9674b6c78-5cgx2   1/1     Running   0          6h20m
+pod/credito-api-9674b6c78-699sq   1/1     Running   0          6s
+pod/credito-api-9674b6c78-g8972   1/1     Running   0          6h21m
+pod/credito-api-9674b6c78-gj2j9   1/1     Running   0          6s
+pod/credito-api-9674b6c78-hvcjl   1/1     Running   0          6h21m
+pod/mlflow-6976698df6-65wnx       1/1     Running   0          6h20m
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/credito-api   3/3     3            3           6h29m
+deployment.apps/mlflow        1/1     1            1           6h35m
+
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/credito-api-9674b6c78-5cgx2   1/1     Running   0          6h22m
+pod/credito-api-9674b6c78-g8972   1/1     Running   0          6h23m
+pod/credito-api-9674b6c78-hvcjl   1/1     Running   0          6h23m
+pod/mlflow-6976698df6-65wnx       1/1     Running   0          6h22m
