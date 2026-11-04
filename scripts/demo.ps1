@@ -17,7 +17,7 @@ if ((kubectl config current-context) -ne 'docker-desktop') {
 }
 switch ($Etapa) {
     'Preparar' {
-        Ejecutar docker @('build','-t','credito-mlops:1.2','.')
+        Ejecutar docker @('build','-t','credito-mlops:1.3','.')
         Ejecutar kubectl @('--context','docker-desktop','apply','-f','k8s/01-mlflow.yaml')
         Ejecutar kubectl @('-n','credito-mlops','rollout','status','deployment/mlflow','--timeout=240s')
     }
@@ -25,7 +25,7 @@ switch ($Etapa) {
         $revisionProyecto = (git rev-parse HEAD).Trim()
         Ejecutar docker @('run','--rm','-e','MLFLOW_TRACKING_URI=http://host.docker.internal:30500',
             '-e',"GIT_COMMIT=$revisionProyecto",'-e','SALIDA=/salidas',
-            '--mount',"type=bind,source=$salidasProyecto,target=/salidas",'credito-mlops:1.2','python','-m','src.entrenar')
+            '--mount',"type=bind,source=$salidasProyecto,target=/salidas",'credito-mlops:1.3','python','-m','src.entrenar')
     }
     'Desplegar' {
         Ejecutar kubectl @('apply','-f','k8s/02-api.yaml')
@@ -35,16 +35,16 @@ switch ($Etapa) {
     'Monitorear' {
         Ejecutar docker @('run','--rm','-e','MLFLOW_TRACKING_URI=http://host.docker.internal:30500',
             '-e','SALIDA=/salidas','--mount',"type=bind,source=$salidasProyecto,target=/salidas",
-            'credito-mlops:1.2','python','-m','src.drift')
+            'credito-mlops:1.3','python','-m','src.drift')
         foreach ($loteProyecto in @('normal','derivado')) {
-            & docker run --rm --mount "type=bind,source=$salidasProyecto,target=/salidas,readonly" credito-mlops:1.2 python -m src.drift --baseline /salidas/baseline.csv --lote "/salidas/lote_$loteProyecto.csv"
+            & docker run --rm --mount "type=bind,source=$salidasProyecto,target=/salidas,readonly" credito-mlops:1.3 python -m src.drift --baseline /salidas/baseline.csv --lote "/salidas/lote_$loteProyecto.csv"
             $esperadoProyecto = if ($loteProyecto -eq 'derivado') { 2 } else { 0 }
             if ($LASTEXITCODE -ne $esperadoProyecto) { throw "Resultado inesperado en lote $loteProyecto" }
             Write-Host "Lote $loteProyecto : codigo esperado $esperadoProyecto"
         }
     }
     'Probar' {
-        Ejecutar docker @('run','--rm','credito-mlops:1.2','python','-m','pytest','-q','-p','no:cacheprovider','--disable-warnings')
+        Ejecutar docker @('run','--rm','credito-mlops:1.3','python','-m','pytest','-q','-p','no:cacheprovider','--disable-warnings')
         $respuestasProyecto = 1..20 | ForEach-Object {
             Invoke-RestMethod http://localhost:30081/health -Headers @{Connection='close'}
         }
