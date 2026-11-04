@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: credito-api
+  namespace: credito-mlops
+spec:
+  replicas: 3
+  revisionHistoryLimit: 3
+  strategy:
+    rollingUpdate: {maxUnavailable: 0, maxSurge: 1}
+  selector:
+    matchLabels: {app: credito-api}
+  template:
+    metadata:
+      labels: {app: credito-api}
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+      containers:
+        - name: api
+          image: credito-mlops:1.2
+          imagePullPolicy: Never
+          ports: [{containerPort: 8000}]
+          env:
+            - {name: MLFLOW_TRACKING_URI, value: "http://mlflow:5000"}
+            - {name: MODEL_URI, value: "models:/credito-riesgo@produccion"}
+            - name: HOSTNAME
+              valueFrom:
+                fieldRef: {fieldPath: metadata.name}
+          resources:
+            requests: {cpu: 100m, memory: 256Mi}
+            limits: {cpu: "1", memory: 768Mi}
+          startupProbe:
+            httpGet: {path: /ready, port: 8000}
+            failureThreshold: 60
+            periodSeconds: 5
+          readinessProbe:
+            httpGet: {path: /ready, port: 8000}
+            periodSeconds: 3
+          livenessProbe:
+            httpGet: {path: /health, port: 8000}
+            periodSeconds: 10
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          volumeMounts: [{name: temporal, mountPath: /tmp}]
+      volumes:
+        - name: temporal
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: credito-api
+  namespace: credito-mlops
+spec:
+  type: NodePort
+  sessionAffinity: None
+  selector: {app: credito-api}
+  ports: [{port: 80, targetPort: 8000, nodePort: 30081}]
