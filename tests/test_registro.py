@@ -5,7 +5,8 @@ from mlflow.tracking import MlflowClient
 from sklearn.dummy import DummyClassifier
 
 
-def test_registro_resuelve_alias_y_run(tmp_path):
+def test_registro_resuelve_alias_y_run(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
     anterior = mlflow.get_tracking_uri()
     try:
         mlflow.set_tracking_uri(f"sqlite:///{tmp_path / 'prueba.db'}")
