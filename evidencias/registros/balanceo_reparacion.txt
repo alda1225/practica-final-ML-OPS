@@ -1,0 +1,21 @@
+Verificacion real del Service localhost:30081
+30 inferencias; todas HTTP 200
+
+credito-api-9674b6c78-fjg4m: 8 respuestas
+credito-api-9674b6c78-g8972: 9 respuestas
+credito-api-9674b6c78-hvcjl: 13 respuestas
+
+Pruebas de API:
+bajo_riesgo: HTTP 200
+alto_riesgo: HTTP 200
+invalido: HTTP 422
+
+Autorreparacion:
+Eliminado: credito-api-9674b6c78-fjg4m
+Reemplazo: credito-api-9674b6c78-5cgx2
+Inferencias durante la prueba: 52
+Errores HTTP/conexion: 0
+Replicas al terminar: 3
+
+Run: 1e80a5489e3d4a4c82e58d10baf530d6
+Version: 2

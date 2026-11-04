@@ -1,0 +1,9 @@
+NAMES                                                                                      IMAGE                          STATUS
+k8s_api_credito-api-9674b6c78-5cgx2_credito-mlops_376b4d88-b25d-4abf-b180-12fc587c8f63_0   8029da19706d                   Up About a minute
+k8s_POD_credito-api-9674b6c78-5cgx2_credito-mlops_376b4d88-b25d-4abf-b180-12fc587c8f63_0   registry.k8s.io/pause:3.10.2   Up About a minute
+k8s_mlflow_mlflow-6976698df6-65wnx_credito-mlops_f51f31d2-0a1f-4a4f-b2ad-38ff8db762cb_0    8029da19706d                   Up 2 minutes
+k8s_POD_mlflow-6976698df6-65wnx_credito-mlops_f51f31d2-0a1f-4a4f-b2ad-38ff8db762cb_0       registry.k8s.io/pause:3.10.2   Up 2 minutes
+k8s_api_credito-api-9674b6c78-g8972_credito-mlops_14a28576-7611-4066-bae1-0252000c18da_0   8029da19706d                   Up 2 minutes
+k8s_POD_credito-api-9674b6c78-g8972_credito-mlops_14a28576-7611-4066-bae1-0252000c18da_0   registry.k8s.io/pause:3.10.2   Up 2 minutes
+k8s_api_credito-api-9674b6c78-hvcjl_credito-mlops_7f368832-96ad-44e1-b9dd-9700f8342256_0   8029da19706d                   Up 2 minutes
+k8s_POD_credito-api-9674b6c78-hvcjl_credito-mlops_7f368832-96ad-44e1-b9dd-9700f8342256_0   registry.k8s.io/pause:3.10.2   Up 2 minutes

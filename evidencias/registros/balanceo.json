@@ -1,0 +1,458 @@
+{
+  "pods": [
+    "credito-api-9674b6c78-fjg4m",
+    "credito-api-9674b6c78-g8972",
+    "credito-api-9674b6c78-hvcjl"
+  ],
+  "reparto": {
+    "credito-api-9674b6c78-fjg4m": 8,
+    "credito-api-9674b6c78-g8972": 9,
+    "credito-api-9674b6c78-hvcjl": 13
+  },
+  "peticiones": [
+    {
+      "hora_utc": "2026-11-04T05:26:42.758742+00:00",
+      "http": 200,
+      "latencia_ms": 69.49,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-fjg4m"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:42.787259+00:00",
+      "http": 200,
+      "latencia_ms": 28.83,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-g8972"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:42.818056+00:00",
+      "http": 200,
+      "latencia_ms": 30.7,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-g8972"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:42.860782+00:00",
+      "http": 200,
+      "latencia_ms": 42.12,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:42.885672+00:00",
+      "http": 200,
+      "latencia_ms": 24.81,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:42.905897+00:00",
+      "http": 200,
+      "latencia_ms": 21.15,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-fjg4m"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:42.947452+00:00",
+      "http": 200,
+      "latencia_ms": 40.98,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:42.971659+00:00",
+      "http": 200,
+      "latencia_ms": 24.07,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-g8972"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.005184+00:00",
+      "http": 200,
+      "latencia_ms": 34.49,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.034744+00:00",
+      "http": 200,
+      "latencia_ms": 28.76,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.059767+00:00",
+      "http": 200,
+      "latencia_ms": 24.68,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.094812+00:00",
+      "http": 200,
+      "latencia_ms": 35.82,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-g8972"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.116254+00:00",
+      "http": 200,
+      "latencia_ms": 20.79,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-g8972"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.158346+00:00",
+      "http": 200,
+      "latencia_ms": 42.65,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.177865+00:00",
+      "http": 200,
+      "latencia_ms": 19.48,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-fjg4m"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.220949+00:00",
+      "http": 200,
+      "latencia_ms": 42.42,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.252918+00:00",
+      "http": 200,
+      "latencia_ms": 32.21,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-fjg4m"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.274194+00:00",
+      "http": 200,
+      "latencia_ms": 21.83,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-fjg4m"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.294370+00:00",
+      "http": 200,
+      "latencia_ms": 20.09,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.329011+00:00",
+      "http": 200,
+      "latencia_ms": 34.61,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-g8972"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.362408+00:00",
+      "http": 200,
+      "latencia_ms": 32.7,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-fjg4m"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.380940+00:00",
+      "http": 200,
+      "latencia_ms": 18.86,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.425516+00:00",
+      "http": 200,
+      "latencia_ms": 45.29,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-g8972"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.455220+00:00",
+      "http": 200,
+      "latencia_ms": 29.27,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.475735+00:00",
+      "http": 200,
+      "latencia_ms": 20.36,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-g8972"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.522847+00:00",
+      "http": 200,
+      "latencia_ms": 46.64,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-fjg4m"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.542853+00:00",
+      "http": 200,
+      "latencia_ms": 20.07,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-g8972"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.564637+00:00",
+      "http": 200,
+      "latencia_ms": 21.63,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-fjg4m"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.583986+00:00",
+      "http": 200,
+      "latencia_ms": 20.35,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    {
+      "hora_utc": "2026-11-04T05:26:43.627733+00:00",
+      "http": 200,
+      "latencia_ms": 42.65,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    }
+  ],
+  "endpoints": [
+    "10.1.0.80",
+    "10.1.0.81",
+    "10.1.0.82"
+  ],
+  "pruebas_api": {
+    "bajo_riesgo": {
+      "hora_utc": "2026-11-04T05:26:43.780507+00:00",
+      "http": 200,
+      "latencia_ms": 20.93,
+      "respuesta": {
+        "moroso": 0,
+        "probabilidad": 0.06734103053435761,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-hvcjl"
+      }
+    },
+    "alto_riesgo": {
+      "hora_utc": "2026-11-04T05:26:43.811326+00:00",
+      "http": 200,
+      "latencia_ms": 30.47,
+      "respuesta": {
+        "moroso": 1,
+        "probabilidad": 0.9508119575270644,
+        "modelo_uri": "models:/credito-riesgo@produccion",
+        "version_modelo": "2",
+        "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+        "pod": "credito-api-9674b6c78-fjg4m"
+      }
+    },
+    "invalido": {
+      "hora_utc": "2026-11-04T05:26:43.828564+00:00",
+      "http": 422,
+      "latencia_ms": 17.56,
+      "respuesta": {
+        "detail": [
+          {
+            "type": "greater_than",
+            "loc": [
+              "body",
+              "ingreso_mensual"
+            ],
+            "msg": "Input should be greater than 0",
+            "input": -1,
+            "ctx": {
+              "gt": 0.0
+            }
+          }
+        ]
+      }
+    }
+  }
+}

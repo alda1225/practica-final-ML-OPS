@@ -1,0 +1,42 @@
+{
+  "estado": "ROJO",
+  "alfa_por_variable": 0.01,
+  "efecto_minimo": 0.1,
+  "variables": [
+    {
+      "variable": "ingreso_mensual",
+      "prueba": "KS",
+      "p_valor": 1.013e-321,
+      "efecto": 0.7318888888888889,
+      "alerta": true
+    },
+    {
+      "variable": "deuda_actual",
+      "prueba": "KS",
+      "p_valor": 1.1544796645363037e-176,
+      "efecto": 0.5458888888888889,
+      "alerta": true
+    },
+    {
+      "variable": "antiguedad_laboral",
+      "prueba": "KS",
+      "p_valor": 0.0,
+      "efecto": 0.9134444444444444,
+      "alerta": true
+    },
+    {
+      "variable": "monto_solicitado",
+      "prueba": "KS",
+      "p_valor": 4.488863405628125e-110,
+      "efecto": 0.43533333333333335,
+      "alerta": true
+    },
+    {
+      "variable": "plazo_meses",
+      "prueba": "chi-cuadrado + distancia total de variacion",
+      "p_valor": 5.477538924527193e-273,
+      "efecto": 0.7016666666666667,
+      "alerta": true
+    }
+  ]
+}

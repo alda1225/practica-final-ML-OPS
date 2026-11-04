@@ -1,0 +1,2 @@
+REPOSITORY      TAG       IMAGE ID                                                                  CREATED         SIZE
+credito-mlops   1.3       sha256:8029da19706d0db77a535cc24b483b1106a642b34d8fee3e2a177d4ee2f7cb49   3 minutes ago   942MB

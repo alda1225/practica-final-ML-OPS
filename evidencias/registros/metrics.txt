@@ -1,0 +1,65 @@
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 5558.0
+python_gc_objects_collected_total{generation="1"} 922.0
+python_gc_objects_collected_total{generation="2"} 80.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 649.0
+python_gc_collections_total{generation="1"} 59.0
+python_gc_collections_total{generation="2"} 5.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="11",patchlevel="11",version="3.11.11"} 1.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.044280832e+09
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 3.06581504e+08
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.79377000578e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 6.61
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 9.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.048576e+06
+# HELP credito_http_requests_total Respuestas HTTP
+# TYPE credito_http_requests_total counter
+credito_http_requests_total{estado="200",metodo="POST",ruta="/predecir"} 6.0
+# HELP credito_http_requests_created Respuestas HTTP
+# TYPE credito_http_requests_created gauge
+credito_http_requests_created{estado="200",metodo="POST",ruta="/predecir"} 1.7937700124369411e+09
+# HELP credito_http_duration_seconds Latencia HTTP
+# TYPE credito_http_duration_seconds histogram
+credito_http_duration_seconds_bucket{le="0.005",ruta="/predecir"} 0.0
+credito_http_duration_seconds_bucket{le="0.01",ruta="/predecir"} 0.0
+credito_http_duration_seconds_bucket{le="0.025",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="0.05",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="0.075",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="0.1",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="0.25",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="0.5",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="0.75",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="1.0",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="2.5",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="5.0",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="7.5",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="10.0",ruta="/predecir"} 6.0
+credito_http_duration_seconds_bucket{le="+Inf",ruta="/predecir"} 6.0
+credito_http_duration_seconds_count{ruta="/predecir"} 6.0
+credito_http_duration_seconds_sum{ruta="/predecir"} 0.1050921169880894
+# HELP credito_http_duration_seconds_created Latencia HTTP
+# TYPE credito_http_duration_seconds_created gauge
+credito_http_duration_seconds_created{ruta="/predecir"} 1.7937700124369655e+09
+

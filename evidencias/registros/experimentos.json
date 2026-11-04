@@ -1,0 +1,99 @@
+{
+  "modelo": "credito-riesgo",
+  "alias": "produccion",
+  "version": "2",
+  "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+  "modelo_uri": "models:/credito-riesgo@produccion",
+  "resultados": [
+    {
+      "nombre": "bosque-1",
+      "run_id": "7a89356a1a2245d18a89fbd5369946e1",
+      "parametros": {
+        "n_estimators": 80,
+        "max_depth": 4,
+        "min_samples_leaf": 5,
+        "class_weight": null
+      },
+      "val_f1": 0.6090225563909775,
+      "val_accuracy": 0.8266666666666667,
+      "val_precision": 0.8526315789473684,
+      "val_recall": 0.47368421052631576
+    },
+    {
+      "nombre": "bosque-2",
+      "run_id": "cd09744fcb2445ff8e6c9100eccd6ea6",
+      "parametros": {
+        "n_estimators": 120,
+        "max_depth": 6,
+        "min_samples_leaf": 3,
+        "class_weight": null
+      },
+      "val_f1": 0.6597222222222222,
+      "val_accuracy": 0.8366666666666667,
+      "val_precision": 0.811965811965812,
+      "val_recall": 0.5555555555555556
+    },
+    {
+      "nombre": "bosque-3",
+      "run_id": "19e0912946d741109dc080a76085bb33",
+      "parametros": {
+        "n_estimators": 150,
+        "max_depth": 10,
+        "min_samples_leaf": 1,
+        "class_weight": null
+      },
+      "val_f1": 0.6666666666666666,
+      "val_accuracy": 0.83,
+      "val_precision": 0.7555555555555555,
+      "val_recall": 0.5964912280701754
+    },
+    {
+      "nombre": "bosque-4",
+      "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+      "parametros": {
+        "n_estimators": 150,
+        "max_depth": 6,
+        "min_samples_leaf": 3,
+        "class_weight": "balanced"
+      },
+      "val_f1": 0.7025495750708215,
+      "val_accuracy": 0.825,
+      "val_precision": 0.6813186813186813,
+      "val_recall": 0.7251461988304093
+    },
+    {
+      "nombre": "bosque-5",
+      "run_id": "daff498a4b284d16888c785da8c0311d",
+      "parametros": {
+        "n_estimators": 200,
+        "max_depth": 10,
+        "min_samples_leaf": 2,
+        "class_weight": "balanced"
+      },
+      "val_f1": 0.7009063444108762,
+      "val_accuracy": 0.835,
+      "val_precision": 0.725,
+      "val_recall": 0.6783625730994152
+    }
+  ],
+  "versiones": [
+    {
+      "version": "1",
+      "run_id": "daff498a4b284d16888c785da8c0311d"
+    },
+    {
+      "version": "2",
+      "run_id": "1e80a5489e3d4a4c82e58d10baf530d6"
+    }
+  ],
+  "test": {
+    "f1": 0.675603217158177,
+    "accuracy": 0.7983333333333333,
+    "precision": 0.6237623762376238,
+    "recall": 0.7368421052631579
+  },
+  "dataset_sha256": "d42968756987d6404bed20556d904651e01551660f402687c427dd96fe1a645f",
+  "n_registros": 3000,
+  "positivos": 854,
+  "git_commit": "3d42a55"
+}

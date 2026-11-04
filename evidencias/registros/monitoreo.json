@@ -1,0 +1,238 @@
+{
+  "modelo": "credito-riesgo",
+  "version": "2",
+  "run_id": "1e80a5489e3d4a4c82e58d10baf530d6",
+  "normal": {
+    "estado": "VERDE",
+    "alfa_por_variable": 0.01,
+    "efecto_minimo": 0.1,
+    "variables": [
+      {
+        "variable": "ingreso_mensual",
+        "prueba": "KS",
+        "p_valor": 0.8353703328568707,
+        "efecto": 0.02422222222222222,
+        "alerta": false
+      },
+      {
+        "variable": "deuda_actual",
+        "prueba": "KS",
+        "p_valor": 0.2807780421018318,
+        "efecto": 0.03877777777777778,
+        "alerta": false
+      },
+      {
+        "variable": "antiguedad_laboral",
+        "prueba": "KS",
+        "p_valor": 0.6214525303013315,
+        "efecto": 0.029444444444444443,
+        "alerta": false
+      },
+      {
+        "variable": "monto_solicitado",
+        "prueba": "KS",
+        "p_valor": 0.3967476871301646,
+        "efecto": 0.035111111111111114,
+        "alerta": false
+      },
+      {
+        "variable": "plazo_meses",
+        "prueba": "chi-cuadrado + distancia total de variacion",
+        "p_valor": 0.1881277764559806,
+        "efecto": 0.044666666666666646,
+        "alerta": false
+      }
+    ]
+  },
+  "derivado": {
+    "estado": "ROJO",
+    "alfa_por_variable": 0.01,
+    "efecto_minimo": 0.1,
+    "variables": [
+      {
+        "variable": "ingreso_mensual",
+        "prueba": "KS",
+        "p_valor": 1.013e-321,
+        "efecto": 0.7318888888888889,
+        "alerta": true
+      },
+      {
+        "variable": "deuda_actual",
+        "prueba": "KS",
+        "p_valor": 1.1544796645363037e-176,
+        "efecto": 0.5458888888888889,
+        "alerta": true
+      },
+      {
+        "variable": "antiguedad_laboral",
+        "prueba": "KS",
+        "p_valor": 0.0,
+        "efecto": 0.9134444444444444,
+        "alerta": true
+      },
+      {
+        "variable": "monto_solicitado",
+        "prueba": "KS",
+        "p_valor": 4.488863405628125e-110,
+        "efecto": 0.43533333333333335,
+        "alerta": true
+      },
+      {
+        "variable": "plazo_meses",
+        "prueba": "chi-cuadrado + distancia total de variacion",
+        "p_valor": 5.477538924527193e-273,
+        "efecto": 0.7016666666666667,
+        "alerta": true
+      }
+    ]
+  },
+  "calibracion": {
+    "lotes": 100,
+    "tamano_lote": 500,
+    "falsas_alarmas": 0,
+    "semillas": [
+      5000,
+      5099
+    ]
+  },
+  "concepto": {
+    "referencia_f1_test": 0.675603217158177,
+    "caida_minima": 0.1,
+    "lotes_exigidos": 2,
+    "lotes": [
+      {
+        "lote": 1,
+        "fraccion_etiquetas_invertidas": 0,
+        "entradas_identicas": true,
+        "f1": 0.6892857142857143,
+        "caida": -0.01368249712753733,
+        "consecutivos": 0,
+        "alarma": false
+      },
+      {
+        "lote": 2,
+        "fraccion_etiquetas_invertidas": 0,
+        "entradas_identicas": true,
+        "f1": 0.6892857142857143,
+        "caida": -0.01368249712753733,
+        "consecutivos": 0,
+        "alarma": false
+      },
+      {
+        "lote": 3,
+        "fraccion_etiquetas_invertidas": 0,
+        "entradas_identicas": true,
+        "f1": 0.6892857142857143,
+        "caida": -0.01368249712753733,
+        "consecutivos": 0,
+        "alarma": false
+      },
+      {
+        "lote": 4,
+        "fraccion_etiquetas_invertidas": 0.1,
+        "entradas_identicas": true,
+        "f1": 0.5858585858585859,
+        "caida": 0.0897446312995911,
+        "consecutivos": 0,
+        "alarma": false
+      },
+      {
+        "lote": 5,
+        "fraccion_etiquetas_invertidas": 0.2,
+        "entradas_identicas": true,
+        "f1": 0.5271084337349398,
+        "caida": 0.1484947834232372,
+        "consecutivos": 1,
+        "alarma": false
+      },
+      {
+        "lote": 6,
+        "fraccion_etiquetas_invertidas": 0.35,
+        "entradas_identicas": true,
+        "f1": 0.4657534246575342,
+        "caida": 0.20984979250064273,
+        "consecutivos": 2,
+        "alarma": true
+      },
+      {
+        "lote": 7,
+        "fraccion_etiquetas_invertidas": 0.5,
+        "entradas_identicas": true,
+        "f1": 0.36386138613861385,
+        "caida": 0.3117418310195631,
+        "consecutivos": 3,
+        "alarma": true
+      },
+      {
+        "lote": 8,
+        "fraccion_etiquetas_invertidas": 0.65,
+        "entradas_identicas": true,
+        "f1": 0.3264367816091954,
+        "caida": 0.3491664355489815,
+        "consecutivos": 4,
+        "alarma": true
+      },
+      {
+        "lote": 9,
+        "fraccion_etiquetas_invertidas": 0.7,
+        "entradas_identicas": true,
+        "f1": 0.2922374429223744,
+        "caida": 0.38336577423580254,
+        "consecutivos": 5,
+        "alarma": true
+      },
+      {
+        "lote": 10,
+        "fraccion_etiquetas_invertidas": 0.7,
+        "entradas_identicas": true,
+        "f1": 0.3013392857142857,
+        "caida": 0.37426393144389125,
+        "consecutivos": 6,
+        "alarma": true
+      }
+    ],
+    "data_drift_entradas": {
+      "estado": "VERDE",
+      "alfa_por_variable": 0.01,
+      "efecto_minimo": 0.1,
+      "variables": [
+        {
+          "variable": "ingreso_mensual",
+          "prueba": "KS",
+          "p_valor": 0.8511965191687382,
+          "efecto": 0.023777777777777776,
+          "alerta": false
+        },
+        {
+          "variable": "deuda_actual",
+          "prueba": "KS",
+          "p_valor": 0.22349900708531034,
+          "efecto": 0.041,
+          "alerta": false
+        },
+        {
+          "variable": "antiguedad_laboral",
+          "prueba": "KS",
+          "p_valor": 0.9332062559977579,
+          "efecto": 0.021,
+          "alerta": false
+        },
+        {
+          "variable": "monto_solicitado",
+          "prueba": "KS",
+          "p_valor": 0.5604518057051745,
+          "efecto": 0.03088888888888889,
+          "alerta": false
+        },
+        {
+          "variable": "plazo_meses",
+          "prueba": "chi-cuadrado + distancia total de variacion",
+          "p_valor": 0.04750092643981403,
+          "efecto": 0.04866666666666666,
+          "alerta": false
+        }
+      ]
+    },
+    "tipo_simulacion": "contrafactual pareado: mismas 1000 entradas en cada lote"
+  }
+}

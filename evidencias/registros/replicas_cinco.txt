@@ -1,0 +1,12 @@
+kubectl -n credito-mlops get deployment credito-api
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+credito-api   5/5     5            5           9m52s
+
+kubectl -n credito-mlops get pods -l app=credito-api
+NAME                          READY   STATUS    RESTARTS   AGE
+credito-api-9674b6c78-5cgx2   1/1     Running   0          2m33s
+credito-api-9674b6c78-g8972   1/1     Running   0          3m39s
+credito-api-9674b6c78-hvcjl   1/1     Running   0          3m45s
+credito-api-9674b6c78-lr596   1/1     Running   0          6s
+credito-api-9674b6c78-nn7ll   1/1     Running   0          6s
+

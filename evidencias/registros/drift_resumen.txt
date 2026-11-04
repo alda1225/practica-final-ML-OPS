@@ -1,0 +1,31 @@
+Pruebas automatizadas de drift
+Comparacion contra 1800 registros de entrenamiento
+p < 0.01 y efecto > 0.10
+
+LOTE NORMAL: VERDE
+ingreso_mensual        p=0.835 efecto=0.0242 alerta=False
+deuda_actual           p=0.281 efecto=0.0388 alerta=False
+antiguedad_laboral     p=0.621 efecto=0.0294 alerta=False
+monto_solicitado       p=0.397 efecto=0.0351 alerta=False
+plazo_meses            p=0.188 efecto=0.0447 alerta=False
+
+LOTE DERIVADO: ROJO
+ingreso_mensual        p=1.01e-321 efecto=0.7319 alerta=True
+deuda_actual           p=1.15e-176 efecto=0.5459 alerta=True
+antiguedad_laboral     p=0 efecto=0.9134 alerta=True
+monto_solicitado       p=4.49e-110 efecto=0.4353 alerta=True
+plazo_meses            p=5.48e-273 efecto=0.7017 alerta=True
+
+Codigos de salida: normal=0, derivado=2
+Falsas alarmas observadas: 0/100 lotes del mismo origen
+Concept drift: entradas iguales; etiquetas modificadas
+Lote  1: F1=0.6893  alarma=False
+Lote  2: F1=0.6893  alarma=False
+Lote  3: F1=0.6893  alarma=False
+Lote  4: F1=0.5859  alarma=False
+Lote  5: F1=0.5271  alarma=False
+Lote  6: F1=0.4658  alarma=True
+Lote  7: F1=0.3639  alarma=True
+Lote  8: F1=0.3264  alarma=True
+Lote  9: F1=0.2922  alarma=True
+Lote 10: F1=0.3013  alarma=True

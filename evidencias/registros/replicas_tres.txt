@@ -1,0 +1,14 @@
+kubectl get nodes
+NAME             STATUS   ROLES           AGE    VERSION
+docker-desktop   Ready    control-plane   3d3h   v1.36.1
+
+kubectl -n credito-mlops get deployment credito-api
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+credito-api   3/3     3            3           8m32s
+
+kubectl -n credito-mlops get pods -l app=credito-api
+NAME                          READY   STATUS    RESTARTS   AGE
+credito-api-9674b6c78-5cgx2   1/1     Running   0          73s
+credito-api-9674b6c78-g8972   1/1     Running   0          2m19s
+credito-api-9674b6c78-hvcjl   1/1     Running   0          2m25s
+
