@@ -22,6 +22,10 @@ button{background:#164e63;color:white;cursor:pointer}#resultado{background:white
 </form>
 <div id="resultado" aria-live="polite">Completa los datos y evalúa la solicitud.</div>
 <p class="aviso">Probabilidad de incumplimiento simulado. Umbral de clasificación: 50 %.</p>
+<h2>Réplicas que atienden la API</h2>
+<p class="aviso">Se envían 12 solicitudes independientes al mismo Service de Kubernetes.</p>
+<button id="balanceo" type="button">Comprobar reparto</button>
+<ul id="reparto" aria-live="polite"></ul>
 <script>
 const form=document.getElementById('formulario'),panel=document.getElementById('resultado');
 form.addEventListener('submit',async e=>{
@@ -35,5 +39,20 @@ form.addEventListener('submit',async e=>{
   const prob=document.createElement('p');prob.textContent='Probabilidad de incumplimiento: '+(r.probabilidad*100).toFixed(2)+' %';panel.append(prob);
   const traza=document.createElement('div');traza.className='traza';traza.textContent='Pod: '+r.pod+' | Versión: '+r.version_modelo+' | Run: '+r.run_id;panel.append(traza);
  }catch(error){panel.textContent='No se pudo evaluar: '+error.message;}finally{boton.disabled=false;}
+});
+document.getElementById('balanceo').addEventListener('click',async e=>{
+ const boton=e.currentTarget,lista=document.getElementById('reparto');boton.disabled=true;lista.replaceChildren();
+ const conteo={};let correctas=0;
+ try{
+  for(let i=0;i<12;i++){
+   const respuesta=await fetch('/health',{cache:'no-store'});
+   if(!respuesta.ok)throw new Error('HTTP '+respuesta.status);
+   const r=await respuesta.json();conteo[r.pod]=(conteo[r.pod]||0)+1;correctas++;
+  }
+  for(const [pod,cantidad] of Object.entries(conteo)){
+   const item=document.createElement('li');item.textContent=pod+': '+cantidad+' respuestas';lista.append(item);
+  }
+  const total=document.createElement('li');total.textContent=correctas+' respuestas HTTP 200; '+Object.keys(conteo).length+' Pods observados';lista.append(total);
+ }catch(error){const item=document.createElement('li');item.textContent=error.message;lista.append(item);}finally{boton.disabled=false;}
 });
 </script></html>

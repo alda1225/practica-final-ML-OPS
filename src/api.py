@@ -73,7 +73,9 @@ async def observar(request: Request, call_next):
 
 
 @app.get("/health")
-def health():
+def health(response: Response):
+    # Conexiones nuevas permiten observar el balanceo L4 desde el navegador.
+    response.headers["Connection"] = "close"
     return {"status": "ok", **app.state.traza}
 
 
