@@ -1,0 +1,9 @@
+.git
+.venv
+salidas
+entrega
+docs
+evidencias
+*.zip
+*.joblib
+__pycache__
