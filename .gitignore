@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.venv/
+mlruns/
+mlartifacts/
+*.db
+*.joblib
+*.pkl
+salidas/
+entrega/
+.env
+*.log
