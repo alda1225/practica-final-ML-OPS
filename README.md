@@ -98,6 +98,7 @@ generados. Los registros entregados permanecen en `evidencias/registros`.
 - [Decisiones y reparto individual](docs/ARQUITECTURA.md).
 - [Guion de defensa y preguntas](docs/DEFENSA.md).
 - [Guía paso a paso para presentar en este equipo](docs/GUIA_PRESENTACION_LOCAL.md).
+- [Presentación web paso a paso](presentacion/index.html): abrir el HTML local, sin instalar dependencias.
 - [Guía de presentación en Word](entrega/Guia_Presentacion_Local_MLOps.docx).
 - Capturas auténticas en `evidencias/capturas`; salidas TXT/JSON en
   `evidencias/registros`. Los artefactos también están asociados al run en MLflow.
