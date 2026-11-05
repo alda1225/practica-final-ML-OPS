@@ -114,7 +114,7 @@
       {
         title: 'Entorno de ejecución',
         description: 'El clúster local ejecuta el servidor de modelos y la API.',
-        commands: [{label: 'Validación en PowerShell', value: "# Ubica la carpeta del proyecto\nSet-Location 'D:\\Alda\\Documents\\ChatGPT\\14. MLOPS\\practica-final-ML-OPS'\n# Identifica el clúster activo\nkubectl config current-context\n# Comprueba que el nodo está disponible\nkubectl get nodes\n# Muestra las réplicas disponibles de cada aplicación\nkubectl -n credito-mlops get deployments", expected: 'Ready indica un nodo disponible. API 3/3 y MLflow 1/1 confirman las réplicas activas.'}],
+        commands: [{label: 'Validación en PowerShell', value: '# Identifica el clúster activo\nkubectl config current-context\n# Comprueba que el nodo está disponible\nkubectl get nodes\n# Muestra las réplicas disponibles de cada aplicación\nkubectl -n credito-mlops get deployments', expected: 'Ready indica un nodo disponible. API 3/3 y MLflow 1/1 confirman las réplicas activas.'}],
         image: captures + 'nativas/17_docker_tres.png',
         caption: 'Docker Desktop muestra el nodo Ready, la API con tres réplicas y MLflow con una.',
         links: [['Abrir MLflow', mlflow], ['Consultar salud', 'http://localhost:30081/health']]
