@@ -9,7 +9,7 @@ Invoke-Item .\presentacion\index.html
 ```
 
 - Anterior y Siguiente recorren los 15 pasos. Las flechas del teclado hacen lo mismo.
-- El selector permite ir a un paso; la dirección conserva la posición mediante `#paso-N`.
+- La dirección conserva la posición mediante `#paso-N`.
 - Ampliar abre la captura completa; Escape la cierra.
 - Copiar lleva el comando comentado al portapapeles. En filtros y JSON se copia solo el contenido válido. La web no ejecuta comandos.
 - Los enlaces de MLflow y de la API requieren Docker Desktop y el laboratorio activos.
