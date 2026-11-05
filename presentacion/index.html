@@ -26,6 +26,15 @@
     article.closing{display:flex;align-items:center;justify-content:center;text-align:center}
     .closing figure,.closing section>:not(h1){display:none}
     .closing h1{margin:0}
+    article.scaling{grid-template-columns:1fr 1fr;gap:18px 32px;align-content:center;align-items:start}
+    .scaling>section{display:contents}
+    .scaling h1{grid-column:1;grid-row:1;margin:0;font-size:40px}
+    .scaling .description{grid-column:1;grid-row:2;margin:0;max-width:none;font-size:20px}
+    .scaling #commands{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .scaling .links{grid-column:1/-1;grid-row:4;margin:0}
+    .scaling figure{grid-column:2;grid-row:1/3}
+    .scaling .evidence img{max-height:140px}
+    @media(max-width:900px){article.scaling{display:flex;flex-direction:column}.scaling>section{display:block}.scaling #commands{display:block}.scaling figure{width:100%}.scaling .evidence img{max-height:none}}
     .description{font-size:clamp(19px,1.6vw,24px);line-height:1.45;max-width:34ch;margin:0 0 20px}
     .points{padding-left:22px;margin:0 0 23px;max-width:43ch;font-size:19px}
     .points li+li{margin-top:8px}
@@ -174,10 +183,11 @@
       },
       {
         title: 'Escalamiento de réplicas',
+        scaling: true,
         description: 'La aplicación pasa de tres a cinco réplicas y regresa a tres.',
         commands: [
-          {label: 'Aumento de capacidad', value: '# Aumenta a cinco réplicas y verifica el despliegue\n./scripts/demo.ps1 -Etapa Escalar -Replicas 5', expected: 'Cinco Pods Ready y Deployment 5/5.'},
-          {label: 'Reducción de capacidad', value: '# Reduce a tres réplicas y verifica el despliegue\n./scripts/demo.ps1 -Etapa Escalar -Replicas 3', expected: 'El Deployment vuelve a tres réplicas disponibles.'}
+          {label: 'Aumento de capacidad', value: '# Aumenta a cinco réplicas\nkubectl -n credito-mlops scale deployment/credito-api --replicas=5\n# Espera hasta que estén disponibles\nkubectl -n credito-mlops rollout status deployment/credito-api\n# Muestra los cinco Pods y su estado\nkubectl -n credito-mlops get pods -l app=credito-api', expected: 'Cinco Pods Running, cada uno con READY 1/1.'},
+          {label: 'Reducción de capacidad', value: '# Reduce a tres réplicas\nkubectl -n credito-mlops scale deployment/credito-api --replicas=3\n# Espera hasta completar el cambio\nkubectl -n credito-mlops rollout status deployment/credito-api\n# Comprueba los Pods restantes\nkubectl -n credito-mlops get pods -l app=credito-api', expected: 'Tres Pods Running y READY 1/1. Los Pods Terminating desaparecen al completar la reducción.'}
         ],
         image: captures + 'nativas/18_docker_cinco.png',
         caption: 'El contador 5/5 confirma cinco réplicas disponibles.',
@@ -262,6 +272,7 @@
       current = Number.isSafeInteger(requested) && requested >= 0 && requested < steps.length ? requested : 0;
       const step = steps[current];
       document.querySelector('article').classList.toggle('closing', !!step.closing);
+      document.querySelector('article').classList.toggle('scaling', !!step.scaling);
       byId('title').textContent = step.title;
       byId('description').textContent = step.description;
       const points = byId('points');
