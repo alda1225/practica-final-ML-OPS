@@ -35,8 +35,8 @@
     .scaling figure{grid-column:2;grid-row:1/3}
     .scaling .evidence img{max-height:140px}
     @media(max-width:900px){article.scaling{display:flex;flex-direction:column}.scaling>section{display:block}.scaling #commands{display:block}.scaling figure{width:100%}.scaling .evidence img{max-height:none}}
-    .description{font-size:clamp(19px,1.6vw,24px);line-height:1.45;max-width:34ch;margin:0 0 20px}
-    .points{padding-left:22px;margin:0 0 23px;max-width:43ch;font-size:19px}
+    .description{font-size:clamp(19px,1.6vw,24px);line-height:1.45;margin:0 0 20px}
+    .points{padding-left:22px;margin:0 0 23px;font-size:19px}
     .points li+li{margin-top:8px}
     .links{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:22px}
     .links a{font-size:17px;font-weight:700;padding:5px 0}
@@ -62,7 +62,7 @@
     .dialog-bar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:14px}
     dialog img{display:block;width:100%;max-height:calc(96dvh - 115px);object-fit:contain}
     noscript{padding:30px}
-    @media(min-width:1000px) and (max-height:760px){article{padding-top:24px;padding-bottom:24px;gap:3vw}h1{font-size:40px;margin-bottom:15px}.description{font-size:20px;margin-bottom:16px}.points{font-size:17px;margin-bottom:16px}.points li+li{margin-top:5px}.links{margin-top:15px}pre{padding:12px;font-size:13px}.command{margin-top:10px}.evidence img{max-height:calc(100dvh - 280px)}}
+    @media(min-width:1000px) and (max-height:900px){article{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding-top:12px;padding-bottom:12px;gap:3vw}h1{font-size:40px;margin-bottom:15px}.description{font-size:20px;margin-bottom:16px}.points{font-size:17px;margin-bottom:16px}.points li+li{margin-top:5px}.links{margin-top:15px}pre{padding:12px;font-size:13px}.command{margin-top:10px}.evidence img{max-height:calc(100dvh - 280px)}}
     @media(max-width:900px){body{height:auto;min-height:100dvh;grid-template-rows:auto 1fr auto}header{padding:16px 22px}.identity{display:block}.identity span{display:block;margin-top:3px}article{grid-template-columns:1fr;align-items:start;padding:30px 22px;gap:32px}h1{font-size:36px}.description{max-width:50ch}.points{max-width:60ch}.evidence img{max-height:none}footer{flex-wrap:wrap;padding:14px 22px;gap:15px}nav{margin-left:auto}nav button{padding:9px 14px}figcaption{align-items:center}dialog{padding:12px}.dialog-bar{font-size:15px}}
     @media(prefers-reduced-motion:no-preference){article{animation:arrive .22s cubic-bezier(.16,1,.3,1)}@keyframes arrive{from{filter:blur(1px)}to{filter:blur(0)}}}
     @media print{body{height:auto}header,footer,.command-top button,.enlarge{display:none}article{display:block}figure{margin-top:25px}.evidence img{max-height:none}}
@@ -114,77 +114,77 @@
     const steps = [
       {
         title: 'Riesgo crediticio con MLOps',
-        description: 'Este proyecto convierte un modelo de riesgo crediticio en un servicio web reproducible y monitoreado.',
-        points: ['Problema: estimar el incumplimiento de una solicitud de crédito.', 'Objetivo: rastrear el modelo, mantener la API disponible y detectar degradación.', 'Alcance: datos sintéticos; el énfasis está en la ingeniería MLOps.'],
+        description: 'Se implementó un servicio web que estima riesgo crediticio y permite seguir el origen y la calidad del modelo.',
+        points: ['Problema: estimar si un solicitante incumplirá el pago.', 'Objetivo: identificar el modelo, mantener la API disponible y detectar si pierde calidad.', 'Alcance: datos sintéticos para demostrar el ciclo MLOps.'],
         image: captures + 'recortes/06_interfaz_kubernetes.png',
         caption: 'La respuesta identifica qué modelo y qué Pod atendieron la solicitud.',
         links: [['Abrir interfaz', 'http://localhost:30081'], ['Ver repositorio', repo]]
       },
       {
-        title: 'Entorno de ejecución',
-        description: 'El clúster local ejecuta el servidor de modelos y la API.',
+        title: 'Ejecución local con Kubernetes',
+        description: 'Se desplegaron MLflow y la API en Kubernetes local para registrar modelos y atender predicciones.',
         commands: [{label: 'Validación en PowerShell', value: '# Identifica el clúster activo\nkubectl config current-context\n# Comprueba que el nodo está disponible\nkubectl get nodes\n# Muestra las réplicas disponibles de cada aplicación\nkubectl -n credito-mlops get deployments', expected: 'Ready indica un nodo disponible. API 3/3 y MLflow 1/1 confirman las réplicas activas.'}],
         image: captures + 'nativas/17_docker_tres.png',
         caption: 'Docker Desktop muestra el nodo Ready, la API con tres réplicas y MLflow con una.',
         links: [['Abrir MLflow', mlflow], ['Consultar salud', 'http://localhost:30081/health']]
       },
       {
-        title: 'Datos y evaluación',
-        description: 'El modelo estima incumplimiento a partir de cinco datos de una solicitud.',
-        points: ['Ingreso, deuda, antigüedad laboral, monto y plazo.', '3.000 registros sintéticos: 1.800 de entrenamiento, 600 de validación y 600 de prueba.', 'La semilla fija permite repetir la división.'],
+        title: 'Datos para entrenar y evaluar',
+        description: 'Se generaron solicitudes de crédito sintéticas para entrenar el modelo y evaluar sus predicciones.',
+        points: ['Cinco entradas: ingreso, deuda, antigüedad laboral, monto y plazo.', '3.000 registros: 1.800 para entrenar, 600 para elegir el modelo y 600 para evaluarlo.', 'La semilla fija permite repetir la misma división.'],
         image: captures + 'recortes/01_experimentos.png',
         caption: 'Los cinco experimentos comparten los mismos datos y la misma división.',
         links: [['Ver datos del run', artifacts + '/datos'], ['Ver generador', repo + '/blob/main/src/datos.py']]
       },
       {
-        title: 'Cinco experimentos',
-        description: 'Bosque-4 obtiene el mayor F1 de validación: 0,7025.',
-        points: ['150 árboles, profundidad 6 y hoja mínima 3.', 'Bosque-5 alcanza F1 0,7009; la diferencia es pequeña.', 'La validación elige el modelo; prueba evalúa al ganador.'],
+        title: 'Comparación de cinco modelos',
+        description: 'Se compararon cinco configuraciones de Random Forest y se eligió bosque-4 con F1 de validación 0,7025.',
+        points: ['F1 combina la precisión y la detección de clientes morosos; cuanto mayor, mejor.', 'Ganador: 150 árboles, profundidad 6 y hoja mínima 3.', 'Bosque-5 obtuvo 0,7009: la ventaja del ganador es pequeña.'],
         commands: [{label: 'Filtro de runs en MLflow', comment: '# Muestra candidatos con F1 de validación desde 0,70', value: 'metrics.val_f1 >= 0.70', expected: 'El filtro devuelve bosque-4 y bosque-5.'}],
         image: captures + '03b_comparacion_metricas.jpg',
         caption: 'MLflow relaciona los hiperparámetros de cada candidato con sus métricas.',
         links: [['Abrir experimento', mlflow], ['Abrir run ganador', mlflow + '/runs/' + run]]
       },
       {
-        title: 'Modelo registrado',
-        description: 'El alias produccion identifica la versión que utiliza el servicio.',
-        points: ['credito-riesgo tiene dos versiones registradas.', 'La versión 2 corresponde al experimento bosque-4.', 'La API devuelve esa versión y su run de origen.'],
+        title: 'Versión del modelo en producción',
+        description: 'Se registró el modelo en MLflow para saber qué versión usa la API y qué entrenamiento la produjo.',
+        points: ['credito-riesgo tiene dos versiones registradas.', 'El alias produccion selecciona la versión 2: bosque-4.', 'Cada respuesta identifica la versión y el run, es decir, su ejecución de entrenamiento.'],
         commands: [{label: 'Validación en PowerShell', value: '# Consulta salud, versión, run y Pod del servicio\nInvoke-RestMethod http://localhost:30081/health', expected: 'version_modelo: 2 y run_id del experimento bosque-4.'}],
         image: captures + 'recortes/04_registro_versiones.png',
         caption: 'El alias produccion apunta a la versión 2 en el registro de MLflow.',
         links: [['Abrir versión 2', 'http://localhost:30500/#/models/credito-riesgo/versions/2'], ['Ver modelo y dependencias', artifacts + '/modelo']]
       },
       {
-        title: 'Contenedor reproducible',
-        description: 'Imagen propia con código y dependencias fijadas.',
-        points: ['credito-mlops:1.3 incluye la API y sus dependencias.', 'El contenedor mantiene el mismo entorno de ejecución.'],
+        title: 'API empaquetada con Docker',
+        description: 'Se creó una imagen propia con el código y versiones fijas de sus librerías para ejecutar la API en un entorno consistente.',
+        points: ['credito-mlops:1.3 incluye la API y las librerías que necesita.', 'El Dockerfile permite reconstruir la imagen; cada réplica usa el mismo entorno.'],
         commands: [{label: 'Validación en PowerShell', value: '# Muestra la etiqueta, identificador y tamaño de la imagen\ndocker images credito-mlops:1.3', expected: 'La imagen de esta ejecución ocupa aproximadamente 942 MB.'}],
         image: captures + 'recortes/16_imagen_docker.png',
         caption: 'La imagen propia queda identificada por etiqueta y hash.',
         links: [['Ver Dockerfile', repo + '/blob/main/Dockerfile'], ['Ver dependencias', repo + '/blob/main/requirements.lock.txt']]
       },
       {
-        title: 'Tres réplicas disponibles',
-        description: 'Un Service selecciona los Pods mediante app: credito-api.',
-        points: ['Tres Pods ejecutan la misma API.', 'Readiness confirma disponibilidad; liveness detecta fallos.'],
+        title: 'API disponible en tres réplicas',
+        description: 'Se desplegaron tres copias de la API para seguir atendiendo solicitudes si una falla.',
+        points: ['El Service dirige las consultas a los Pods con la etiqueta app: credito-api.', 'Readiness comprueba si pueden atender; liveness permite reiniciar un contenedor que falla.'],
         commands: [{label: 'Validación en PowerShell', value: '# Lista los Pods de la API y su estado\nkubectl -n credito-mlops get pods -l app=credito-api\n# Muestra el Service que publica la aplicación\nkubectl -n credito-mlops get service credito-api', expected: 'Tres Pods 1/1. El Service expone el puerto local 30081.'}],
         image: captures + 'nativas/17_docker_tres.png',
         caption: 'El Deployment mantiene tres réplicas; el Service ofrece un único punto de acceso.',
         links: [['Ver manifiesto', repo + '/blob/main/k8s/02-api.yaml'], ['Abrir servicio', 'http://localhost:30081']]
       },
       {
-        title: 'Balanceo y recuperación',
-        description: 'El Service reparte consultas y el Deployment reemplaza un Pod eliminado.',
-        points: ['La prueba observó inferencias sin errores durante el reemplazo.'],
+        title: 'Reparto de consultas y recuperación',
+        description: 'Se comprobó que las consultas llegan a distintos Pods y que Kubernetes reemplaza uno eliminado.',
+        points: ['Durante el reemplazo, las otras réplicas siguieron respondiendo sin errores en la prueba.'],
         commands: [{label: 'Validación en PowerShell', value: '# Envía 30 inferencias y comprueba el reparto entre Pods\npython scripts/verificar_cluster.py balanceo\n# Elimina un Pod y envía inferencias mientras se reemplaza\npython scripts/verificar_cluster.py autorreparacion', expected: 'Reparto entre Pods, un reemplazo nuevo y cero errores en la ventana observada.'}],
         image: captures + 'recortes/11_balanceo_autorreparacion.png',
         caption: 'Ejecución guardada: reparto 8/9/13 y 52 inferencias sin errores durante la reparación.',
         links: [['Comprobar reparto en la interfaz', 'http://localhost:30081'], ['Ver registro en MLflow', artifacts + '/evidencias/autorreparacion.json']]
       },
       {
-        title: 'Escalamiento de réplicas',
+        title: 'Aumento y reducción de réplicas',
         scaling: true,
-        description: 'La aplicación pasa de tres a cinco réplicas y regresa a tres.',
+        description: 'Se aumentó la API de tres a cinco copias para ampliar su capacidad y después se volvió a tres.',
         commands: [
           {label: 'Aumento de capacidad', value: '# Aumenta a cinco réplicas\nkubectl -n credito-mlops scale deployment/credito-api --replicas=5\n# Espera hasta que estén disponibles\nkubectl -n credito-mlops rollout status deployment/credito-api\n# Muestra los cinco Pods y su estado\nkubectl -n credito-mlops get pods -l app=credito-api', expected: 'Cinco Pods Running, cada uno con READY 1/1.'},
           {label: 'Reducción de capacidad', value: '# Reduce a tres réplicas\nkubectl -n credito-mlops scale deployment/credito-api --replicas=3\n# Espera hasta completar el cambio\nkubectl -n credito-mlops rollout status deployment/credito-api\n# Comprueba los Pods restantes\nkubectl -n credito-mlops get pods -l app=credito-api', expected: 'Tres Pods Running y READY 1/1. Los Pods Terminating desaparecen al completar la reducción.'}
@@ -194,45 +194,45 @@
         links: [['Ver registro de cinco réplicas', artifacts + '/evidencias/replicas_cinco.txt']]
       },
       {
-        title: 'Inferencia desde la API',
-        description: 'La interfaz y Swagger consumen el Service de Kubernetes.',
-        points: ['Una solicitud válida devuelve predicción y probabilidad.', 'Un ingreso negativo se rechaza antes de predecir.'],
+        title: 'Predicciones desde la web',
+        description: 'Se creó una interfaz web que consulta la API de Kubernetes para estimar el riesgo de una solicitud.',
+        points: ['Devuelve predicción de incumplimiento y probabilidad.', 'Swagger permite probar la API. Un ingreso negativo se rechaza.'],
         commands: [{label: 'Solicitud JSON · POST /predecir', comment: '# Ejemplo de solicitud de alto riesgo', value: '{\n  "ingreso_mensual": 500, "deuda_actual": 12000,\n  "antiguedad_laboral": 0, "monto_solicitado": 20000,\n  "plazo_meses": 6\n}', expected: 'Caso válido: HTTP 200, moroso: 1. Con ingreso -1: HTTP 422.'}],
         image: captures + 'recortes/08_inferencia_swagger.png',
         caption: 'Swagger muestra una respuesta válida con predicción, versión, run y Pod.',
         links: [['Abrir interfaz', 'http://localhost:30081'], ['Abrir Swagger', 'http://localhost:30081/docs']]
       },
       {
-        title: 'Data drift',
-        description: 'Los datos nuevos pueden alejarse de los utilizados para entrenar.',
-        points: ['Cada entrada se compara con el baseline de entrenamiento.', 'KS en cuatro variables; chi-cuadrado y variación total en plazo.', 'Alerta: p < 0,01 y efecto > 0,10.'],
+        title: 'Data drift: cambios en los datos',
+        description: 'Se compararon las cinco entradas nuevas con los datos de entrenamiento para detectar cambios en su distribución.',
+        points: ['Gráfica de barras: azul = normal, rojo = alterado. Mayor altura significa mayor cambio.', 'Se usa Kolmogorov-Smirnov (KS) en cuatro variables; chi-cuadrado y variación total en plazo.', 'Alerta: p < 0,01 y distancia > 0,10.'],
         commands: [{label: 'Validación en PowerShell', value: '# Compara lotes normales y alterados; genera las gráficas\n./scripts/demo.ps1 -Etapa Monitorear', expected: 'Lote normal VERDE: salida 0. Datos alterados ROJO: salida 2, alarma esperada.'}],
         image: records + 'data_drift.png',
-        caption: 'La deriva inyectada cambia las cinco distribuciones; el lote normal permanece estable.',
+        caption: 'Eje horizontal: variables. Eje vertical: distancia frente al entrenamiento. La línea marca 0,10; la alarma también exige p < 0,01.',
         links: [['Abrir gráfica en MLflow', artifacts + '/monitoreo/data_drift.png'], ['Ver resultado verde y rojo', artifacts + '/evidencias/drift_resumen.txt']]
       },
       {
-        title: 'Concept drift',
-        description: 'Mismas entradas, etiquetas modificadas y F1 en descenso.',
-        points: ['El modelo se equivoca más aunque las entradas no cambian.', 'Alarma: caída de F1 > 0,10 durante dos lotes seguidos.', 'Sin etiquetas reales, el desempeño queda pendiente.'],
+        title: 'Concept drift: pérdida de acierto',
+        description: 'Se cambió quién paga o incumple, con las mismas entradas, para simular la pérdida de acierto del modelo.',
+        points: ['Gráfica de líneas: F1 en diez lotes. Si baja, el modelo predice peor.', 'Alarma: caída de F1 > 0,10 durante dos lotes seguidos.', 'Sin saber si el cliente pagó (etiqueta real), no se calcula F1; mientras tanto se vigilan datos y API.'],
         commands: [{label: 'Validación en PowerShell', value: '# Abre la gráfica generada por el monitoreo\nInvoke-Item .\\salidas\\concept_drift.png', expected: 'La caída sostenida activa la alarma desde el lote 6.'}],
         image: records + 'concept_drift.png',
-        caption: 'La curva muestra diez lotes simulados. La zona roja indica alarma sostenida.',
+        caption: 'Eje horizontal: lotes. Eje vertical: F1. Línea gris: referencia; roja: referencia menos 0,10. La zona sombreada marca alarma desde el lote 6.',
         links: [['Abrir gráfica en MLflow', artifacts + '/monitoreo/concept_drift.png'], ['Ver resultados completos', artifacts + '/monitoreo/monitoreo.json']]
       },
       {
-        title: 'Pruebas automatizadas',
-        description: 'Seis tests verifican datos, API, registro y detección de drift.',
-        points: ['Las pruebas verifican tanto entradas normales como alteradas.', 'GitHub Actions repite las pruebas con cada push.'],
+        title: 'Verificación automática del proyecto',
+        description: 'Se implementaron seis pruebas para comprobar los datos, la API, el registro y la detección de cambios.',
+        points: ['Las pruebas comprueban que los datos normales pasan y los alterados activan una alerta.', 'GitHub Actions repite las pruebas al subir cambios al repositorio.'],
         commands: [{label: 'Validación en PowerShell', value: '# Ejecuta seis tests y comprueba respuestas de las réplicas\n./scripts/demo.ps1 -Etapa Probar', expected: '6 passed, consultas de salud distribuidas y Pods Ready.'}],
         image: captures + '15_github_actions.jpg',
         caption: 'GitHub Actions registra las ejecuciones y sus resultados.',
         links: [['Abrir GitHub Actions', repo + '/actions'], ['Ver log de pruebas', artifacts + '/evidencias/pruebas.log']]
       },
       {
-        title: 'Resultados y límites',
-        description: 'Modelo trazable, réplicas verificadas y alarmas de degradación.',
-        points: ['El registro conecta el servicio con su experimento de origen.', 'Las réplicas toleran la pérdida de un Pod.', 'Datos sintéticos, un solo nodo y MLflow único limitan el alcance.'],
+        title: 'Logros y límites del proyecto',
+        description: 'Se completó el recorrido desde el entrenamiento hasta una API con varias réplicas y pruebas de degradación.',
+        points: ['MLflow permite identificar el entrenamiento del modelo que responde.', 'Las réplicas toleran la pérdida de un Pod, pero no la caída del único nodo.', 'Los datos son sintéticos y MLflow tiene una sola instancia; es una demostración local.'],
         commands: [{label: 'Estado final en PowerShell', value: '# Confirma las réplicas disponibles del proyecto\nkubectl -n credito-mlops get deployments', expected: 'API 3/3 y MLflow 1/1 disponibles.'}],
         image: captures + 'nativas/17_deployment_detalle.png',
         caption: 'El servicio de inferencia cuenta con tres réplicas disponibles.',
